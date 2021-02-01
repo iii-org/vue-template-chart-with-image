@@ -27,5 +27,5 @@ stages:
         image.tag: ${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
         service.type: NodePort
       name: ${CICD_GIT_REPO_NAME}-node
-      targetNamespace: ${cicd_git_repo_name}
+      targetNamespace: vue-template-chart-with-image
 notification: {}
