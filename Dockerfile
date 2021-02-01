@@ -8,5 +8,5 @@ RUN ls && \
     npm install -D vuepress && \
     npm run build
 # 正式伺服器
-FROM library/httpd:2.4
+FROM bitnami/apache
 COPY --from=builder /home/node/dist/ /app/
