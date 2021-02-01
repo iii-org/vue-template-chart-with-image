@@ -37,7 +37,6 @@ stages:
         image.tag: ${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
         ingress.enabled: "true"
         ingress.hostname: "vue-with-image.120.105.129.176.xip.io"
-        ingress.tls: "true"
         service.type: NodePort
       name: ${CICD_GIT_REPO_NAME}-xip
       targetNamespace: ${CICD_GIT_REPO_NAME}
