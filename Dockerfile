@@ -9,4 +9,4 @@ RUN ls && \
     npm run build
 # 正式伺服器
 FROM library/httpd:2.4
-COPY --from=builder /home/node/dist/ /usr/local/apache2/htdocs/
+COPY --from=builder /home/node/dist/ /app/
