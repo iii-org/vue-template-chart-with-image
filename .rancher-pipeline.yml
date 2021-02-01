@@ -11,7 +11,6 @@ stages:
       PLUGIN_BUILD_ARGS: --progress=tty --network=host
       PLUGIN_DEBUG: "true"
       PLUGIN_INSECURE: "true"
-      PLUGIN_MIRROR: https://10.20.0.73:5443
       PLUGIN_MTU: "1000"
     when:
       branch: {}
@@ -27,7 +26,7 @@ stages:
         image.tag: ${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
         service.type: NodePort
       name: ${CICD_GIT_REPO_NAME}-node
-      targetNamespace: vue-template-chart-with-image
+      targetNamespace: ${CICD_GIT_REPO_NAME}
   - applyAppConfig:
       catalogTemplate: cattle-global-data:bitnami-node
       version: 9.1.0
@@ -41,5 +40,5 @@ stages:
         ingress.tls: "true"
         service.type: NodePort
       name: ${CICD_GIT_REPO_NAME}-xip
-      targetNamespace: vue-template-chart-with-image
+      targetNamespace: ${CICD_GIT_REPO_NAME}
 notification: {}
