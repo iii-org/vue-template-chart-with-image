@@ -18,7 +18,7 @@ stages:
   steps:
   - applyAppConfig:
       catalogTemplate: cattle-global-data:bitnami-apache
-      version: 12.0.1
+      version: 7.3.14
       answers:
         image.pullSecrets[0]: harbor-local
         image.registry: reg.406.csie.nuu.edu.tw
@@ -29,7 +29,7 @@ stages:
       targetNamespace: ${CICD_GIT_REPO_NAME}
   - applyAppConfig:
       catalogTemplate: cattle-global-data:bitnami-apache
-      version: 12.0.1
+      version: 7.3.14
       answers:
         image.pullSecrets[0]: harbor-local
         image.registry: reg.406.csie.nuu.edu.tw
